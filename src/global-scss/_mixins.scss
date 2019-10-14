@@ -1,0 +1,13 @@
+@mixin getFont($font-color: black, $font-family: "") {
+  $display: (
+    "mobile": 1.3rem,
+    "desktop": 1.6rem
+  );
+  font-size: map-get($display, "mobile");
+  color: $font-color;
+  font-family: #{$font-family};
+
+  @include media-screen(medium) {
+    font-size: map-get($display, "desktop");
+  }
+}

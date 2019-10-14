@@ -1,3 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
 @import "./global-scss/reset";
 @import "./global-scss/font";
+@import "./global-scss/media";
+@import "./global-scss/mixins";
+
+$gutter-horizontal: 2rem;
+$gutter-vertical: 2rem;

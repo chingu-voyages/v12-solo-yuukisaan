@@ -1,0 +1,12 @@
+@mixin media-screen($breakpoint-name) {
+  $display: (
+    "small": 576px,
+    "medium": 768px,
+    "large": 992px,
+    "xl": 1200px
+  );
+
+  @media (min-width: map-get($display,$breakpoint-name)) {
+    @content;
+  }
+}
