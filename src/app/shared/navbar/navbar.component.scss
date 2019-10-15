@@ -17,8 +17,21 @@ $theme-colors: (
   }
 
   .navbar-nav {
+    .nav-item {
+      cursor: pointer;
+
+      padding: 2rem;
+
+      &:hover {
+        background: lighten(#333333, 15%);
+      }
+    }
+
     @include media-screen(medium) {
       margin-left: 2rem;
+      text-align: center;
+      min-width: 9.4rem;
+      max-width: 9.4rem;
     }
   }
 
