@@ -1,33 +1,31 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <span class="navbar-brand">Movies app</span>
-  <button
-    class="navbar-toggler"
-    type="button"
-    aria-controls="navbarContent"
-    [attr.aria-expanded]="!collapsed"
-    aria-label="Toggle navigation"
-    (click)="collapsed = !collapsed"
-  >
+  <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed"
+    aria-label="Toggle navigation" (click)="collapsed = !collapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
-
+  <form class="navbar-submit d-sm-none">
+    <input class="form-control form-control-lg navbar__search" type="text" placeholder="Search a movie here" />
+    <img src="assets/icons/search.svg" class="navbar__search-icon" alt="">
+  </form>
   <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
-        <a href="#1" active>New</a>
+        <a href="#1" class="nav-item__link" active>New</a>
       </li>
       <li class="nav-item">
-        <a href="#2">Popular</a>
+        <a href="#2" class="nav-item__link">Popular</a>
       </li>
       <li class="nav-item">
-        <a href="#3">Cinema</a>
+        <a href="#3" class="nav-item__link">Cinema</a>
       </li>
       <li ngbDropdown display="dynamic" placement="bottom-right"></li>
     </ul>
   </div>
-  <input
-    class="form-control form-control-lg navbar__search"
-    type="text"
-    placeholder="Search a movie here"
-  />
+
+  <form class="navbar-submit d-none d-sm-block">
+      <input class="form-control form-control-lg navbar__search" type="text" placeholder="Search a movie here" />
+      <img src="assets/icons/search.svg" class="navbar__search-icon" alt="">
+    </form>
+
 </nav>

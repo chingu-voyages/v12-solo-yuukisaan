@@ -1,0 +1,17 @@
+<div class='container movies'>
+    <h1 class="movies__title">New Movies</h1>
+    <ng-container *ngIf="newMovies">
+        <div class="movies__new">
+            <div class="card" *ngFor="let movie of newMovies">
+                <img [src]="movie.poster.desktop" class="card-img-top" alt="this represents movie image">
+                <div class="card-body">
+                    <h3 class="card-title">{{movie.title}}</h3>
+                    <p class="card-text">
+                        {{movie.release_date}}
+                    </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,11 @@
+.movies{
+    .movies__title {
+        margin:2rem 0;
+    }
+
+    .movies__new {
+        display:grid;
+        grid-template-columns: repeat(auto-fill,minMax(250px,1fr));
+        grid-gap:1rem;
+    }
+}

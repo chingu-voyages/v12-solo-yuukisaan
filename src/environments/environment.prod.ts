@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  serverEndPoint: "https://movies-backend-0.herokuapp.com"
 };
