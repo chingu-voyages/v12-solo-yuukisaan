@@ -12,7 +12,7 @@
 
                     <div class="card-body-text ">
                         <h3 class="card-text">{{movie.release_date | date : "mediumDate"}}</h3>
-                        <h3 class="card-overview">{{movie.overview}}</h3>
+                        <h3 class="card-overview">{{movie.overview  | words : 30 : '...' }}</h3>
                     </div>
                 </div>
             </div>

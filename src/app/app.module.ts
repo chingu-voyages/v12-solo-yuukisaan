@@ -6,6 +6,7 @@ import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { HttpClientModule } from '@angular/common/http';
 import { NewmovieComponent } from './newmovie/newmovie.component';
 import { Routes, RouterModule } from "@angular/router";
+import { TruncateModule } from 'ng2-truncate';
 
 const routes: Routes = [
   {
@@ -17,7 +18,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, NewmovieComponent],
-  imports: [BrowserModule, NgbModule, HttpClientModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, NgbModule, HttpClientModule, RouterModule.forRoot(routes), TruncateModule],
   providers: [],
   bootstrap: [AppComponent]
 })
