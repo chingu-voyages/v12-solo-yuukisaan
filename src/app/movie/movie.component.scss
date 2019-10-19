@@ -1,0 +1,88 @@
+@import "styles";
+
+.movieInfo {
+  width: 100vw;
+  height: 300px;
+  background-size: cover;
+  position: relative;
+  background-color: #edf2f7;
+  @include media-screen(xl) {
+    background-position: center;
+  }
+  .movieInfo-layer {
+    position: absolute;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.movieInfo-container {
+  position: relative;
+  z-index: 2;
+  margin-top: -20rem;
+  height: 100%;
+}
+.movieInfo-container-content {
+  width: 50%;
+  min-width: 360px;
+  font-size: 1.6rem;
+  .movieInfo-container-content__poster {
+    @include media-screen(small) {
+      width: 185px;
+    }
+    width: 92px;
+  }
+
+  .breadcrumb {
+    background: none;
+
+    &-item::before {
+      color: white;
+    }
+  }
+
+  .badge {
+    font-size: 1.3rem;
+  }
+}
+
+.movieInfo-container-content__overview {
+  position: relative;
+  z-index: 5;
+  min-width: 36rem;
+  width: 50%;
+  font-size: 1.6rem;
+
+  @include media-screen(xl) {
+    min-width: 50vw;
+  }
+}
+
+.movie-trailer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minMax(35rem, 1fr));
+  grid-gap: 1rem;
+  justify-items: center;
+}
+
+.card {
+  min-width: 30rem;
+  max-width: 30rem;
+
+  @include media-screen(small) {
+    width: 100%;
+    max-width: 50rem;
+  }
+
+  iframe {
+    width: 100%;
+  }
+}
+
+.card-body {
+  min-height: 10rem;
+  font-family: Nunito;
+}

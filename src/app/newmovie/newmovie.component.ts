@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../service/movies.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-newmovie',
@@ -10,7 +11,7 @@ export class NewmovieComponent implements OnInit {
 
   newMovies;
 
-  constructor(private _service: MoviesService) { }
+  constructor(private _service: MoviesService, private route: Router) { }
 
   ngOnInit() {
     this._service.getCurrentMovies().subscribe(
@@ -18,6 +19,10 @@ export class NewmovieComponent implements OnInit {
         this.newMovies = val
       }
     );
+  }
+
+  onClick(id) {
+    this.route.navigateByUrl(`movie/${id}`);
   }
 
 }

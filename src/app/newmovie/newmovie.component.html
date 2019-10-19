@@ -2,13 +2,13 @@
     <h1 class="movies__title  ">New Movies</h1>
     <ng-container *ngIf="newMovies">
         <div class="movies__new">
-            <div class="card animated fadeIn slow" *ngFor="let movie of newMovies">
+            <div class="card animated fadeIn slow" *ngFor="let movie of newMovies" (click)="onClick(movie.id)">
                 <img [src]="movie.poster.backdrop" class="card-img-top " alt="this represents movie image">
                 <img [src]="movie.poster.poster" class="card-poster" alt="posterimage">
 
                 <div class="card-body">
 
-                     <h3 class="card-title">{{movie.title}}</h3>
+                    <h3 class="card-title">{{movie.title}}</h3>
 
                     <div class="card-body-text ">
                         <h3 class="card-text">{{movie.release_date | date : "mediumDate"}}</h3>

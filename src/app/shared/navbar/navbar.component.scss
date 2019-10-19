@@ -16,65 +16,72 @@ $theme-colors: (
   }
 }
 
-
-
 .navbar-nav {
-     @include media-screen(medium) {
-      margin-left: 2rem;
-      text-align: center;
-      min-width: 9.4rem;
-      max-width: 9.4rem;
-   }
-    
-   .nav-item {
-      @include media-screen(medium) {
-        margin-left: 2rem;
-        margin-top: unset;
-      }
-      cursor: pointer;
-      margin-top: $gutter-vertical;
-      padding: 2rem;
-      &:hover {
-        background: lighten(#333333, 15%);
-      }
+  @include media-screen(medium) {
+    margin-left: 2rem;
+    text-align: center;
+    min-width: 9.4rem;
+    max-width: 9.4rem;
+  }
 
-      .nav-item__link {
-        @include getFont(darken(white, 10%));
-        &:hover {
-          color: lighten(white, 10%);
-        }
-      }
+  .nav-item {
+    @include media-screen(medium) {
+      margin-left: 2rem;
+      margin-top: unset;
+    }
+    cursor: pointer;
+    margin-top: $gutter-vertical;
+    padding: 2rem;
+    &:hover {
+      background: lighten(#333333, 15%);
     }
 
+    .nav-item__link {
+      @include getFont(darken(white, 10%));
+      &:hover {
+        color: lighten(white, 10%);
+      }
+    }
+  }
 }
 
-.navbar-submit{
-  @include media-screen(medium){
-    min-width:40rem;
+.navbar-submit {
+  @include media-screen(medium) {
+    min-width: 40rem;
   }
-  min-width:100%;
-  position:relative;
+  min-width: 100%;
+  position: relative;
   .navbar__search {
     @include media-screen(medium) {
       margin-top: unset;
       max-width: 40rem;
     }
-    font-size:1.6rem;
+    font-size: 1.6rem;
     margin-top: $gutter-vertical;
     border-radius: 1rem;
-    height:4rem;
+    height: 4rem;
   }
-  
+
   .navbar__search-icon {
     @include media-screen(medium) {
       margin-top: unset;
     }
-    width:3.5rem;
-    height:3.5rem;
-    position:absolute;
-    right:0.5rem;
-    top:0.3rem;
-    margin-top:2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.3rem;
+    margin-top: 2rem;
   }
 }
 
+.collapse .navbar-collapse {
+  opacity: 0;
+  display: block;
+  transition: all 2s ease-out;
+}
+
+.navbar-collapse {
+  opacity: 1;
+  display: block;
+}

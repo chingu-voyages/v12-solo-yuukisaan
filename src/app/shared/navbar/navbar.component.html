@@ -11,7 +11,7 @@
   <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
-        <a href="#1" class="nav-item__link" active>New</a>
+        <a routerLink="/" class="nav-item__link" active>New</a>
       </li>
       <li class="nav-item">
         <a href="#2" class="nav-item__link">Popular</a>
@@ -24,8 +24,8 @@
   </div>
 
   <form class="navbar-submit d-none d-sm-block">
-      <input class="form-control form-control-lg navbar__search" type="text" placeholder="Search a movie here" />
-      <img src="assets/icons/search.svg" class="navbar__search-icon" alt="">
-    </form>
+    <input class="form-control form-control-lg navbar__search" type="text" placeholder="Search a movie here" />
+    <img src="assets/icons/search.svg" class="navbar__search-icon" alt="">
+  </form>
 
 </nav>

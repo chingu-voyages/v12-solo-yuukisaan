@@ -7,17 +7,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewmovieComponent } from './newmovie/newmovie.component';
 import { Routes, RouterModule } from "@angular/router";
 import { TruncateModule } from 'ng2-truncate';
+import { MovieComponent } from './movie/movie.component';
+import { SafePipe } from './pipe/safe.pipe';
 
 const routes: Routes = [
   {
     path: "",
     component: NewmovieComponent
+  },
+  {
+    path:"movie/:id",
+    component: MovieComponent
   }
 ]
 
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, NewmovieComponent],
+  declarations: [AppComponent, NavbarComponent, NewmovieComponent, MovieComponent, SafePipe],
   imports: [BrowserModule, NgbModule, HttpClientModule, RouterModule.forRoot(routes), TruncateModule],
   providers: [],
   bootstrap: [AppComponent]
