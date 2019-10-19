@@ -61,28 +61,77 @@
   }
 }
 
-.movie-trailer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minMax(35rem, 1fr));
-  grid-gap: 1rem;
-  justify-items: center;
+.main-trailer {
+  min-width: 100vw;
+  min-height: 40rem;
+  @include media-screen(medium) {
+    min-width: 50rem;
+  }
 }
 
-.card {
-  min-width: 30rem;
-  max-width: 30rem;
+.movie-heading {
+  font-size: 3.6rem;
+}
 
-  @include media-screen(small) {
-    width: 100%;
-    max-width: 50rem;
+.movie-trailer {
+  display: flex;
+  overflow-x: scroll;
+  justify-content: space-between;
+  @include media-screen(medium) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minMax(35rem, 1fr));
+    grid-gap: 1rem;
+    overflow: hidden;
   }
 
   iframe {
-    width: 100%;
+    min-width: 100vw;
+    min-height: 40rem;
+    @include media-screen(medium) {
+      min-width: 25rem;
+      min-height: 30rem;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    height: 6px;
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #333333;
+    width: 50%;
   }
 }
 
-.card-body {
-  min-height: 10rem;
-  font-family: Nunito;
+.movie-trailer-container {
+  min-height: 30rem;
+}
+
+.movie-casts {
+  display: flex;
+  overflow-x: scroll;
+  justify-content: space-between;
+  min-height: 30rem;
+
+  .card {
+    min-height: 25rem;
+    min-width: 30rem;
+  }
+
+  &::-webkit-scrollbar {
+    height: 6px;
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #333333;
+    width: 50%;
+  }
+}
+
+.movie-info-content {
+  @include media-screen(xl) {
+    display: flex;
+  }
 }

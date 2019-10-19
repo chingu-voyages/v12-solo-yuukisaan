@@ -2,7 +2,8 @@
     <h1 class="movies__title  ">New Movies</h1>
     <ng-container *ngIf="newMovies">
         <div class="movies__new">
-            <div class="card animated fadeIn slow" *ngFor="let movie of newMovies" (click)="onClick(movie.id)">
+            <div class="card animated fadeIn slow delay-{{i}}" *ngFor="let movie of newMovies; let i =index;"
+                (click)="onClick(movie.id)">
                 <img [src]="movie.poster.backdrop" class="card-img-top " alt="this represents movie image">
                 <img [src]="movie.poster.poster" class="card-poster" alt="posterimage">
 
