@@ -111,12 +111,20 @@
 .movie-casts {
   display: flex;
   overflow-x: scroll;
-  justify-content: space-between;
   min-height: 30rem;
-
+  min-width: 100vw;
   .card {
     min-height: 25rem;
-    min-width: 30rem;
+    min-width: 31rem;
+  }
+
+  .card-img-top {
+    min-width: 100vw;
+    min-height: 45rem;
+    max-height: 45rem;
+    @include media-screen(xl) {
+      min-width: unset;
+    }
   }
 
   &::-webkit-scrollbar {
@@ -127,11 +135,5 @@
   &::-webkit-scrollbar-thumb {
     background-color: #333333;
     width: 50%;
-  }
-}
-
-.movie-info-content {
-  @include media-screen(xl) {
-    display: flex;
   }
 }

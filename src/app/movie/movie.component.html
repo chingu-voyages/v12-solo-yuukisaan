@@ -35,43 +35,39 @@
         </div>
     </div>
 
-    <div class="container-fluid movie-info-content">
-        <div class="d-flex align-items-center flex-column my-3">
+    <div class="d-flex align-items-center flex-column my-3">
 
-            <div class="mt-5 d-flex align-items-center flex-column">
-                <h1 class="text-center my-3 font-weight-bold movie-heading">Main trailer</h1>
-                <iframe [src]="movieTrailers[0].youtube | safe" width="100%" height="100%"
-                    class="animated main-trailer mt-3 fadeIn" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="mt-5 w-100 d-flex align-items-center flex-column  animated fadeIn">
-                <h1 class="font-weight-bold text-center my-5  movie-heading">Other trailers</h1>
-                <div class="container movie-trailer ml-5">
-                    <div [ngStyle]="{'justify-content-center': 'first'}" class="movie-trailer-container"
-                        *ngFor="let movieTrailer of (movieTrailers| slice:1); let i = index; let first = first">
-                        <iframe [src]="movieTrailer.youtube | safe" width="100%" height="100%" class="animated fadeIn"
-                            frameborder="0" allowfullscreen></iframe>
-                    </div>
+        <div class="mt-5 d-flex align-items-center flex-column">
+            <h1 class="text-center my-3 font-weight-bold movie-heading">Main trailer</h1>
+            <iframe [src]="movieTrailers[0].youtube | safe" width="100%" height="100%"
+                class="animated main-trailer mt-3 fadeIn" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="mt-5 w-100 d-flex align-items-center flex-column  animated fadeIn">
+            <h1 class="font-weight-bold text-center my-5  movie-heading">Other trailers</h1>
+            <div class="container movie-trailer ml-5">
+                <div [ngStyle]="{'justify-content-center': 'first'}" class="movie-trailer-container"
+                    *ngFor="let movieTrailer of (movieTrailers| slice:1); let i = index; let first = first">
+                    <iframe [src]="movieTrailer.youtube | safe" width="100%" height="100%" class="animated fadeIn"
+                        frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
-        <div class="d-flex align-items-center flex-column my-3">
-            <div class="mt-5 d-flex align-items-center flex-column">
-                <h1 class="text-center my-3 font-weight-bold movie-heading">Casting</h1>
-                <div class="container movie-casts ml-5">
-                    <div *ngFor="let cast of movieCast">
-                        <div class="card">
-                            <img class="card-img-top" [src]="cast.profile_image" alt="this is a profile image" />
-                            <div class="card-body text-center p-3">
-                                <h1 class="card-title ">{{cast.character}}</h1>
-                                <h2>{{cast.name}}</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
+    <div class="my-5 d-flex flex-column">
+        <h1 class="text-center my-3 font-weight-bold movie-heading">Casting</h1>
+        <div class="container movie-casts ">
+            <div *ngFor="let cast of movieCast">
+                <div class="card">
+                    <img class="card-img-top" [src]="cast.profile_image" alt="this is a profile image" />
+                    <div class="card-body text-center p-3">
+                        <h1 class="card-title ">{{cast.character}}</h1>
+                        <h2>{{cast.name}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 </div>
