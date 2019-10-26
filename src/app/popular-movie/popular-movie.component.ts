@@ -11,7 +11,7 @@ export class PopularMovieComponent implements OnInit {
   constructor(private _service: MoviesService) { }
 
   ngOnInit() {
-    this._service.getMovieType("current_movies").subscribe(
+    this._service.getMovieType("popular_movies").subscribe(
       val => {
         this.movies = val
       }
