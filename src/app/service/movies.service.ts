@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { environment } from "../../environments/environment";
 import { forkJoin, Observable } from 'rxjs';
 @Injectable({
@@ -19,6 +19,14 @@ export class MoviesService {
   getMovieType(type: String): Observable<object> {
     return this.http.get(
       `${environment.serverEndPoint}/movies/${type}`
+    )
+  }
+
+
+  searchMovie(query: string): Observable<Object> {
+    const searchParams = new HttpParams().set("query", query);
+    return this.http.get(
+      `${environment.serverEndPoint}/movies/search`, { params: searchParams }
     )
   }
 

@@ -135,16 +135,20 @@
   overflow-x: scroll;
   min-height: 30rem;
   min-width: 100vw;
+  @include media-screen(xl) {
+    min-width: 50vw;
+    margin: 0 auto;
+  }
   .card {
     min-height: 25rem;
     min-width: 31rem;
   }
 
   .card-img-top {
-    min-width: 100vw;
     min-height: 45rem;
     max-height: 45rem;
-    @include media-screen(xl) {
+    min-width: 100vw;
+    @include media-screen("medium") {
       min-width: unset;
     }
   }

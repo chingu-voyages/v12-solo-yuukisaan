@@ -4,6 +4,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { NewmovieComponent } from './newmovie/newmovie.component';
 import { MovieComponent } from './movie/movie.component';
 import { PopularMovieComponent } from './popular-movie/popular-movie.component';
+import { SearchMovieComponent } from './search-movie/search-movie.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,10 @@ const routes: Routes = [
   , {
     path: "popular",
     component: PopularMovieComponent
+  },
+  {
+    path: "search/:query",
+    component: SearchMovieComponent
   }
 ]
 

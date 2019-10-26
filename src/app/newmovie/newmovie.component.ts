@@ -7,10 +7,15 @@ import { Router } from '@angular/router';
   templateUrl: './newmovie.component.html',
   styleUrls: ['./newmovie.component.scss']
 })
-export class NewmovieComponent {
+export class NewmovieComponent implements OnInit {
+  constructor(private _service: MoviesService) { }
 
-
-
-  constructor() { }
-
+  movies;
+  ngOnInit() {
+    this._service.getMovieType("current_movies").subscribe(
+      val => {
+        this.movies = val
+      }
+    );
+  }
 }

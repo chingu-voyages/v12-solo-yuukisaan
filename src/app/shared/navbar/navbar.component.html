@@ -12,9 +12,6 @@
       <img src="assets/icons/search.svg" class="navbar__search-icon" alt=""
         [ngStyle]="{'opacity' : searchForm.invalid ? '0.5' : '1' }">
     </label>
-    <h5 class='text-danger mt-2' *ngIf="search.invalid && search.touched">
-      Movie to search cannot be blank
-    </h5>
   </form>
   <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
     <ul class="navbar-nav mr-auto">
@@ -36,9 +33,6 @@
       <img src="assets/icons/search.svg" class="navbar__search-icon"
         [ngStyle]="{'opacity' : searchForm.invalid ? '0.5' : '1' }" alt="">
     </label>
-    <h3 class='text-danger ' *ngIf="search.invalid && search.touched">
-      Movie to search cannot be blank
-    </h3>
   </form>
 
 </nav>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MoviesService } from '../service/movies.service';
 
 @Component({
   selector: 'app-popular-movie',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./popular-movie.component.scss']
 })
 export class PopularMovieComponent implements OnInit {
-
-  constructor() { }
+  movies;
+  constructor(private _service: MoviesService) { }
 
   ngOnInit() {
+    this._service.getMovieType("current_movies").subscribe(
+      val => {
+        this.movies = val
+      }
+    );
   }
 
 }

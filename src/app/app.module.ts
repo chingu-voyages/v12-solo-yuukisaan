@@ -12,11 +12,13 @@ import { SafePipe } from './pipe/safe.pipe';
 import { AllMovieTemplateComponent } from './all-movie-template/all-movie-template.component';
 import { PopularMovieComponent } from './popular-movie/popular-movie.component';
 import { RouterModuleModule } from './router-module.module';
+import { SearchMovieComponent } from './search-movie/search-movie.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, NewmovieComponent, MovieComponent, SafePipe, AllMovieTemplateComponent, PopularMovieComponent],
+  declarations: [AppComponent, NavbarComponent, NewmovieComponent, MovieComponent, SafePipe, AllMovieTemplateComponent, PopularMovieComponent,
+    SearchMovieComponent],
   imports: [BrowserModule, NgbModule, HttpClientModule, RouterModuleModule, TruncateModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]

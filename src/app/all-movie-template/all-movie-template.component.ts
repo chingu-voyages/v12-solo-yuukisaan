@@ -7,27 +7,20 @@ import { MoviesService } from '../service/movies.service';
   templateUrl: './all-movie-template.component.html',
   styleUrls: ['./all-movie-template.component.scss']
 })
-export class AllMovieTemplateComponent implements OnInit {
+export class AllMovieTemplateComponent {
 
-  movies;
 
-  constructor(private _service: MoviesService, private route: Router) { }
+
+  constructor(private route: Router) { }
 
 
   @Input()
-  movieType: String;
+  movies: String;
 
 
   @Input()
   title: String;
 
-  ngOnInit() {
-    this._service.getMovieType(this.movieType).subscribe(
-      val => {
-        this.movies = val
-      }
-    );
-  }
 
   onClick(id) {
     this.route.navigateByUrl(`movie/${id}`);

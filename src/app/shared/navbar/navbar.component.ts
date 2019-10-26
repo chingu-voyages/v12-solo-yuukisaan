@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MoviesService } from 'src/app/service/movies.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,8 @@ import { MoviesService } from 'src/app/service/movies.service';
 export class NavbarComponent implements OnInit {
   collapsed = true;
   searchForm;
-  constructor(private _fb: FormBuilder, private _service : MoviesService) { }
+  constructor(private _fb: FormBuilder, private _service: MoviesService,
+    private _route: Router) { }
 
   ngOnInit() {
     this.searchForm = this._fb.group({
@@ -25,8 +27,8 @@ export class NavbarComponent implements OnInit {
 
 
   onSubmit() {
-    console.log(this.searchForm.value);
-
+    const { query } = this.searchForm.value;
+    this._route.navigateByUrl(`search/${query}`)
     this.searchForm.patchValue({
       "query": ""
     })
