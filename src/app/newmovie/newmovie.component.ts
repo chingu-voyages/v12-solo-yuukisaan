@@ -7,22 +7,10 @@ import { Router } from '@angular/router';
   templateUrl: './newmovie.component.html',
   styleUrls: ['./newmovie.component.scss']
 })
-export class NewmovieComponent implements OnInit {
+export class NewmovieComponent {
 
-  newMovies;
 
-  constructor(private _service: MoviesService, private route: Router) { }
 
-  ngOnInit() {
-    this._service.getCurrentMovies().subscribe(
-      val => {
-        this.newMovies = val
-      }
-    );
-  }
-
-  onClick(id) {
-    this.route.navigateByUrl(`movie/${id}`);
-  }
+  constructor() { }
 
 }
