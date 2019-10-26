@@ -31,13 +31,7 @@ export class SearchMovieComponent implements OnInit {
             type: "error"
           })
           this._location.back();
-        } else {
-          Swal.fire({
-            title: `Search Successful, searched ${this.movies.length} movies`,
-            type: "success"
-          })
         }
-
       })
 
   }
