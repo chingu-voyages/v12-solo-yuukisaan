@@ -1,0 +1,22 @@
+<div class='container movies '>
+    <h1 class="movies__title  ">{{title}}</h1>
+    <ng-container *ngIf="movies">
+        <div class="movies__new">
+            <div class="card animated fadeIn slow delay-{{i}}" *ngFor="let movie of movies; let i =index;"
+                (click)="onClick(movie.id)">
+                <img [src]="movie.poster.backdrop" class="card-img-top " alt="this represents movie image">
+                <img [src]="movie.poster.poster" class="card-poster" alt="posterimage">
+
+                <div class="card-body">
+
+                    <h3 class="card-title">{{movie.title}}</h3>
+
+                    <div class="card-body-text ">
+                        <h3 class="card-text">{{movie.release_date | date : "mediumDate"}}</h3>
+                        <h3 class="card-overview">{{movie.overview  | words : 30 : '...' }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>
