@@ -17,6 +17,28 @@
     left: 0;
     width: 100%;
   }
+
+  .movieInfo__return {
+    width: 50px;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+  }
+}
+
+.movieInfo__back--button {
+  padding: 1rem;
+  width: 5rem;
+  top: 2rem;
+  left: 2rem;
+  position: absolute;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .back-icon {
+    width: 25px;
+  }
 }
 
 .movieInfo-container {

@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "../../environments/environment";
-import { forkJoin } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 @Injectable({
   providedIn: "root"
 })
@@ -11,6 +11,26 @@ export class MoviesService {
   getCurrentMovies() {
     return this.http.get(
       `${environment.serverEndPoint}/movies/current_movies`
+    )
+  }
+
+
+  getPopularMovies() {
+    return this.http.get(
+      `${environment.serverEndPoint}/movies/popular_movies`
+    )
+  }
+
+
+  /**
+   * fetch a GET request from the movie api based on the function parameter passed
+   * 
+   * @param type current_movies - get the latest movies
+   *             popular_movies - get popular movies 
+   */
+  getMovieType(type: String): Observable<object> {
+    return this.http.get(
+      `${environment.serverEndPoint}/movies/${type}`
     )
   }
 
