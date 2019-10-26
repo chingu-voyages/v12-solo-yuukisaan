@@ -25,16 +25,16 @@ export class SearchMovieComponent implements OnInit {
     ).subscribe(
       val => {
         this.movies = val;
-        if (this.movies.length) {
-          Swal.fire({
-            title: `Search Successful, searched ${this.movies.length} movies`,
-            type: "success"
-          })
-        } else {
-          this._location.back();
+        if (!this.movies.length) {
           Swal.fire({
             title: "Your search returned no results",
             type: "error"
+          })
+          this._location.back();
+        } else {
+          Swal.fire({
+            title: `Search Successful, searched ${this.movies.length} movies`,
+            type: "success"
           })
         }
 

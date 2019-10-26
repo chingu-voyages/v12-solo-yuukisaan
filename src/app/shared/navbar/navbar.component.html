@@ -4,7 +4,7 @@
     aria-label="Toggle navigation" (click)="collapsed = !collapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <form class="navbar-submit d-sm-none" [formGroup]="searchForm" (ngSubmit)="onSubmit(event)">
+  <form class="navbar-submit d-sm-none" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
     <input class="form-control form-control-lg navbar__search" type="text" formControlName="query"
       placeholder="Search a movie here" />
     <label>
@@ -25,7 +25,7 @@
     </ul>
   </div>
 
-  <form class="navbar-submit d-none d-sm-block mt-4" [formGroup]="searchForm" (ngSubmit)="onSubmit(event)">
+  <form class="navbar-submit d-none d-sm-block mt-4" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
     <input class="form-control form-control-lg navbar__search" type="text" formControlName="query"
       placeholder="Search a movie here" />
     <label>
