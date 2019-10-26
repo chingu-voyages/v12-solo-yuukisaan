@@ -51,6 +51,11 @@ $theme-colors: (
   }
   min-width: 100%;
   position: relative;
+
+  input[type="submit"] {
+    display: none;
+  }
+
   .navbar__search {
     @include media-screen(medium) {
       margin-top: unset;

@@ -8,18 +8,6 @@ import { forkJoin, Observable } from 'rxjs';
 export class MoviesService {
   constructor(private http: HttpClient) { }
 
-  getCurrentMovies() {
-    return this.http.get(
-      `${environment.serverEndPoint}/movies/current_movies`
-    )
-  }
-
-
-  getPopularMovies() {
-    return this.http.get(
-      `${environment.serverEndPoint}/movies/popular_movies`
-    )
-  }
 
 
   /**
@@ -35,21 +23,20 @@ export class MoviesService {
   }
 
 
-  getMovieTrailers(id) {
-
+  private getMovieTrailers(id) {
     return this.http.get(
       `${environment.serverEndPoint}/movies/trailers/${id}`
     )
 
   }
 
-  getMovieInfo(id) {
+  private getMovieInfo(id) {
     return this.http.get(
       `${environment.serverEndPoint}/movies/movie_info/${id}`
     )
   }
 
-  getMovieCast(id) {
+  private getMovieCast(id) {
     return this.http.get(
       `${environment.serverEndPoint}/movies/movie_cast/${id}`
     )

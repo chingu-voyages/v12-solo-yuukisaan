@@ -4,6 +4,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NewmovieComponent } from './newmovie/newmovie.component';
 import { TruncateModule } from 'ng2-truncate';
 import { MovieComponent } from './movie/movie.component';
@@ -16,7 +17,7 @@ import { RouterModuleModule } from './router-module.module';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, NewmovieComponent, MovieComponent, SafePipe, AllMovieTemplateComponent, PopularMovieComponent],
-  imports: [BrowserModule, NgbModule, HttpClientModule, RouterModuleModule, TruncateModule],
+  imports: [BrowserModule, NgbModule, HttpClientModule, RouterModuleModule, TruncateModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
