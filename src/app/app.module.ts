@@ -2,6 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppComponent } from "./app.component";
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -19,7 +20,7 @@ import { SearchMovieComponent } from './search-movie/search-movie.component';
 @NgModule({
   declarations: [AppComponent, NavbarComponent, NewmovieComponent, MovieComponent, SafePipe, AllMovieTemplateComponent, PopularMovieComponent,
     SearchMovieComponent],
-  imports: [BrowserModule, NgbModule, HttpClientModule, RouterModuleModule, TruncateModule, ReactiveFormsModule],
+  imports: [BrowserModule, NgbModule, HttpClientModule, RouterModuleModule, TruncateModule, ReactiveFormsModule, InfiniteScrollModule],
   providers: [],
   bootstrap: [AppComponent]
 })
