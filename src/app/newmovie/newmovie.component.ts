@@ -11,11 +11,21 @@ export class NewmovieComponent implements OnInit {
   constructor(private _service: MoviesService) { }
 
   movies;
+  count = 1;
   ngOnInit() {
     this._service.getMovieType("current_movies").subscribe(
       val => {
         this.movies = val
       }
     );
+  }
+
+  onScroll() {
+    this.count += 1
+    this._service.getCurrentMovies(this.count.toString()).subscribe(
+      val => {
+        this.movies = this.movies.concat(val);
+      }
+    )
   }
 }

@@ -45,17 +45,15 @@
     text-align: left;
     display: inline-block;
   }
+}
 
-  .card-body-text {
-    font-family: Nunito;
+.card-body-text {
+  font-family: Nunito;
 
-    .card-text {
-      font-size: 2rem;
-    }
-    .card-overview-text {
-      font-size: 1.6rem;
-
-
-    }
+  .card-text {
+    font-size: 2rem;
+  }
+  .card-overview-text {
+    font-size: 1.6rem;
   }
 }
