@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MoviesService } from '../service/movies.service';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-movie',
@@ -10,7 +9,7 @@ import { Location } from '@angular/common';
 })
 export class MovieComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private _service: MoviesService, private location: Location) { }
+  constructor(private route: ActivatedRoute, private _service: MoviesService) { }
   movieTrailers;
   movieInfo;
   movieCast;
@@ -29,9 +28,7 @@ export class MovieComponent implements OnInit {
   }
 
 
-  goBack() {
-    this.location.back();
-  }
+
 
 
 
