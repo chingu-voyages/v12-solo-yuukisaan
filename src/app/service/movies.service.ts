@@ -22,6 +22,13 @@ export class MoviesService {
     )
   }
 
+  getCurrentMovies(page: string): Observable<Object> {
+    const pageParams = new HttpParams().set("page", page);
+    return this.http.get(
+      `${environment.serverEndPoint}/movies/current_movies`, { params: pageParams }
+    )
+  }
+
 
   searchMovie(query: string): Observable<Object> {
     const searchParams = new HttpParams().set("query", query);
